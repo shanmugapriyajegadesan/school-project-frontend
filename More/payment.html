@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Fee Payment</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    
+    <style>
+        :root {
+            --primary: #1E293B;
+            --secondary: #94A3B8;
+            --accent: #F59E0B;
+            --bg-dark: white;
+            --card-bg: #F8FAFC; /* Updated for better visibility on white bg */
+            --accent-light: rgba(245,158,11,0.2);
+            --accent-soft: rgba(245,158,11,0.08);
+            --text-light: #333333; /* Dark text for readability */
+        }
+
+        /* Fixes sizing issues across all elements */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Keeps footer at the bottom */
+        }
+
+        /* Navbar Z-Index fix */
+        #navbar {
+            position: relative;
+            z-index: 999;
+        }
+
+        /* Main Content Wrapper */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 140px;
+        }
+
+        /* Header / Title */
+        .section-title {
+            text-align: center;
+            color: var(--accent);
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        /* Form Container */
+        .payment-container {
+            width: 90%;
+            max-width: 450px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
+            margin-bottom: 40px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        h3 {
+            color: var(--primary);
+            font-size: 18px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            border-bottom: 2px solid var(--accent-light);
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        .payment-section {
+            margin-top: 25px;
+        }
+
+        /* Inputs */
+        input, select {
+            width: 100%;
+            padding: 12px 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #E2E8F0;
+            background: white;
+            color: var(--text-light);
+            outline: none;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+
+        input:focus, select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 5px var(--accent-light);
+        }
+
+        /* Button */
+        button {
+            width: 100%;
+            padding: 14px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #D97706; /* Darker amber for hover */
+            transform: scale(1.02);
+        }
+
+        /* Receipt */
+        .receipt {
+            margin-top: 20px;
+            padding: 20px;
+            background: var(--accent-light);
+            border-radius: 10px;
+            display: none;
+            border: 1px dashed var(--accent);
+        }
+
+        .receipt p {
+            margin: 8px 0;
+            font-size: 14px;
+        }
+
+        .success {
+            color: #D97706;
+            font-size: 18px !important;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px !important;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #070f24;
+            text-align: center;
+            padding: 30px 15px;
+            margin-top: auto;
+            width: 100%;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        footer h3 {
+            color: #94A3B8;
+            margin-bottom: 8px;
+            border: none;
+            display: block;
+        }
+
+        footer p {
+            color: #94A3B8;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .social {
+            margin-top: 12px;
+        }
+
+        .social i {
+            margin: 0 10px;
+            cursor: pointer;
+            color: #94A3B8;
+            transition: 0.3s;
+            font-size: 18px;
+        }
+
+        .social i:hover {
+            color: var(--accent);
+            transform: scale(1.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar"></div>
+    
+    <div class="main-content">
+        <h2 class="section-title">School Fee Payment</h2>
+
+        <div class="payment-container">
+            <form id="paymentForm">
+                <h3>Student Details</h3>
+                <input type="text" id="name" placeholder="Student Name" required>
+                <input type="text" id="class" placeholder="Class" required>
+
+                <h3 class="payment-section">Payment Details</h3>
+                <input type="number" id="amount" placeholder="Amount (₹)" required>
+
+                <select id="method" required>
+                    <option value="">Select Payment Method</option>
+                    <option>UPI</option>
+                    <option>Card</option>
+                    <option>Net Banking</option>
+                </select>
+
+                <button type="submit">Pay Now</button>
+            </form>
+
+            <div class="receipt" id="receipt">
+                <p class="success">Payment Successful ✅</p>
+                <p id="rName"></p>
+                <p id="rClass"></p>
+                <p id="rAmount"></p>
+                <p id="rMethod"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h3>Our School</h3>
+        <p>© 2026 All Rights Reserved | Education is Power</p>
+
+        <div class="social">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById("paymentForm");
+        const receipt = document.getElementById("receipt");
+
+        form.addEventListener("submit", function(e){
+            e.preventDefault();
+
+            let name = document.getElementById("name").value.trim();
+            let studentClass = document.getElementById("class").value.trim();
+            let amount = document.getElementById("amount").value;
+            let method = document.getElementById("method").value;
+
+            if(name === "" || studentClass === "" || amount === "" || method === ""){
+                alert("Please fill all fields");
+                return;
+            }
+
+            if(amount <= 0){
+                alert("Enter valid amount");
+                return;
+            }
+
+            // Display receipt
+            document.getElementById("rName").innerText = "Name: " + name;
+            document.getElementById("rClass").innerText = "Class: " + studentClass;
+            document.getElementById("rAmount").innerText = "Amount Paid: ₹" + amount;
+            document.getElementById("rMethod").innerText = "Payment Method: " + method;
+
+            receipt.style.display = "block";
+
+            form.reset();
+        });
+    </script>
+    <script src="../script.js"></script>
+</body>
+</html>

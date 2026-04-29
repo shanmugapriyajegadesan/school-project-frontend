@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Excellence | EduStream</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    
+    <style>
+          :root{
+    --accent:#F59E0B;
+    --muted:#94A3B8;
+}
+       *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif; /* Ithu mattum add pannunga */
+    background: linear-gradient(135deg,var(--bg1),var(--bg2));
+    color:#001529; 
+    overflow-x:hidden;
+}
+
+        /* --- ACADEMIC CORE SECTION --- */
+        .academic-core {
+            padding: 160px 10%;
+            text-align: center;
+            
+        }
+
+        .academic-core h2 {
+            color: #F59E0B;/* Darker title for white bg */
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        
+        }
+
+        .sub-text {
+            color: #64748B;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            line-height: 1.7;
+            
+        }
+
+        /* --- GRID --- */
+        .academic-feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        /* --- CARD --- */
+        .feature-card {
+            background: #1E293B;
+            padding: 40px 30px;
+            border-radius: 24px;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(0,0,0,0.05);
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        .feature-card:nth-child(1){ animation-delay: 0.1s; }
+        .feature-card:nth-child(2){ animation-delay: 0.2s; }
+        .feature-card:nth-child(3){ animation-delay: 0.3s; }
+        .feature-card:nth-child(4){ animation-delay: 0.4s; }
+        .feature-card:nth-child(5){ animation-delay: 0.5s; }
+        .feature-card:nth-child(6){ animation-delay: 0.6s; }
+
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* HOVER EFFECT */
+        .feature-card:hover {
+            transform: translateY(-12px);
+            border-color: #F59E0B;
+            box-shadow: 0 20px 50px rgba(245,158,11,0.25);
+        }
+
+        /* ICON STYLE */
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(245,158,11,0.15);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            transition: 0.3s;
+        }
+
+        .feature-icon i {
+            color: #F59E0B;
+            font-size: 28px;
+            transition: 0.3s;
+        }
+
+        .feature-card:hover .feature-icon {
+            background: #F59E0B;
+        }
+
+        .feature-card:hover .feature-icon i {
+            color: #1E293B;
+        }
+
+        /* CARD TEXT */
+        .feature-card h3 {
+            color: white; 
+            margin-bottom: 12px;
+            font-size: 20px;
+        }
+
+        .feature-card p {
+            color: #CBD5F5;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .feature-btn {
+            display: inline-block;
+            margin-top: 15px;
+            color: #F59E0B;
+            font-size: 12px;
+            text-decoration: none;
+            border-bottom: 1px solid #F59E0B;
+            padding-bottom: 2px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .feature-btn:hover {
+            letter-spacing: 1px;
+            color: #FFFFFF;
+            border-color:#FFFFFF;
+        }
+
+     footer {
+    background:#070f24;
+    text-align:center;
+    padding:30px 15px;
+    margin-top:40px;
+    border-top:1px solid rgba(255,255,255,0.1);
+}
+
+  footer h3{
+    color:var(--accent);
+    margin-bottom:8px;
+    
+}
+
+  footer p{
+    color:var(--muted);
+    font-size:14px;
+    
+}
+
+  .social{
+    margin-top:12px;
+}
+
+  .social i{
+    margin:0 10px;
+    cursor:pointer;
+    color:white;
+    transition:0.3s;
+}
+
+  .social i:hover{
+    color:var(--accent);
+    transform:scale(1.3);
+}
+       
+    </style>
+</head>
+
+<body>
+<div id="navbar"></div>
+<section class="academic-core">
+    <h2>Academic Excellence</h2>
+    <p class="sub-text">
+        Our academic framework is built on internationally recognized standards, ensuring excellence, innovation, and holistic development across every stage of a student’s educational journey. We focus on nurturing critical thinking, creativity, and lifelong learning skills in a structured and supportive environment.
+    </p>
+
+    <div class="academic-feature-grid">
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-award"></i></div>
+            <h3>Certified Curriculum</h3>
+            <p>Aligned with national and international boards, ensuring globally accepted academic standards and quality education.</p>
+            <a href="#" class="feature-btn">Learn More</a>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-lightbulb"></i></div>
+            <h3>Modern Methods</h3>
+            <p>Innovative teaching strategies integrating technology, smart classrooms, and interactive learning experiences.</p>
+            <a href="#" class="feature-btn">Learn More</a>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-trophy"></i></div>
+            <h3>Proven Excellence</h3>
+            <p>Consistent record of outstanding academic results with top-performing students in board examinations.</p>
+            <a href="#" class="feature-btn">Learn More</a>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-user-graduate"></i></div>
+            <h3>Student Growth</h3>
+            <p>Focus on overall growth through personality development, leadership training, and communication skills.</p>
+            <a href="#" class="feature-btn">Learn More</a>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-laptop-code"></i></div>
+            <h3>Digital Learning</h3>
+            <p>Smart classrooms, e-learning platforms, and digital resources to enhance modern education delivery.</p>
+            <a href="#" class="feature-btn">Learn More</a>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fas fa-book-reader"></i></div>
+            <h3>Career Guidance</h3>
+            <p>Expert mentoring and career counseling programs guiding students towards professional success.</p>
+            <a href="#" class="feature-btn">Learn More</a>
+        </div>
+    </div>
+</section>
+
+
+<footer class="custom-footer">
+    <h3>Our School</h3>
+    <p>© 2026 All Rights Reserved | Education is Power</p>
+
+    <div class="social">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-youtube"></i>
+    </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>

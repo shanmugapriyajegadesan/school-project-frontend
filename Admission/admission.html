@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admission Procedure</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+  margin: 0;
+    font-family:'Poppins', sans-serif; /* Ithu mattum add pannunga */
+    color: #fff;
+}
+
+.section{
+   padding:140px 8% 60px;
+}
+
+.title{
+  text-align:center;
+  font-size:36px;
+  font-weight:600;
+  color:#1E293B;
+  margin-bottom:40px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(5, minmax(220px, 1fr));
+  gap:25px;
+}
+.card{
+  /* background: #0a192f; */
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 4px 15px rgba(0,0,0,0.05);
+  transition: 0.3s;
+  position:relative;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  /* box-shadow:0 20px 40px rgba(0,0,0,0.15); */
+}
+
+.card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+
+.content{
+  padding:20px;
+}
+
+.step{
+  display:inline-block;
+  padding:5px 12px;
+  border-radius:20px;
+  font-size:12px;
+  color:#333;
+  margin-bottom:10px;
+  background: #fff;
+}
+
+.content h3{
+  font-size:20px;
+  color:#F59E0B;
+  margin-bottom:10px;
+}
+
+.content p{
+  font-size:14px;
+  color:#CBD5F5;
+  line-height:1.6;
+}
+
+/* Glow border effect */
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:20px;
+  padding:2px;
+}
+
+footer{
+    background:#070f24;
+    text-align:center;
+    padding:30px 15px;
+    margin-top:40px;
+    border-top:1px solid rgba(255,255,255,0.1);
+}
+
+footer h3{
+    color:var(--accent);
+    margin-bottom:8px;
+    color: #94a3b8;
+}
+
+footer p{
+    color:var(--muted);
+    font-size:14px;
+    color: #94a3b8;
+}
+
+.social{
+    margin-top:12px;
+    color: #94a3b8;
+}
+
+.social i{
+    margin:0 10px;
+    cursor:pointer;
+    color:white;
+    transition:0.3s;
+}
+
+.social i:hover{
+    transform:scale(1.3);
+}
+
+</style>
+
+</head>
+<body>
+<div id="navbar"></div>
+<section class="section">
+  <div class="container">
+  <div class="title">Admission Procedure</div>
+
+  <div class="grid">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1588072432836-e10032774350">
+      <div class="content">
+        <span class="step step1">Step 1</span>
+        <h3>Enquiry</h3>
+        <p>Parents can visit the school campus or website to collect information about courses, facilities, and admission guidelines.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0">
+      <div class="content">
+        <span class="step step2">Step 2</span>
+        <h3>Application Form</h3>
+        <p>Fill out the admission form online or offline with accurate student and parent details.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7">
+      <div class="content">
+        <span class="step step3">Step 3</span>
+        <h3>Entrance / Interaction</h3>
+        <p>Students may attend an entrance test or interaction session to assess their academic level.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754">
+      <div class="content">
+        <span class="step step4">Step 4</span>
+        <h3>Document Verification</h3>
+        <p>Submit required documents such as birth certificate, previous records, and ID proof for verification.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f">
+      <div class="content">
+        <span class="step step5">Step 5</span>
+        <h3>Fee Payment & Confirmation</h3>
+        <p>Pay the admission fees to confirm the seat and receive the admission confirmation receipt.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="custom-footer">
+    <h3>Our School</h3>
+    <p>© 2026 All Rights Reserved | Education is Power</p>
+
+    <div class="social">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-youtube"></i>
+    </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>

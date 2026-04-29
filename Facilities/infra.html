@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infrastructure</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    /* background: linear-gradient(135deg,var(--bg1),var(--bg2)); */
+    color:#001529;
+}
+
+.header{
+    text-align:center;
+    padding:140px 20px 30px;
+    background:#0a192f;
+}
+
+.header h1{
+    font-size:36px;
+    margin-bottom:10px;
+    color: #e2a90c;
+}
+
+.header p{
+    color:#94a3b8;
+    max-width:650px;
+    margin:auto;
+    line-height:1.6;
+}
+
+/* SECTION */
+.section{
+    display:flex;
+    align-items:center;
+    gap:60px;
+    padding:50px 10%;
+}
+
+.section.reverse{
+    flex-direction:row-reverse;
+}
+
+/* IMAGE */
+.image{
+    flex:0.7;
+}
+
+.image img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+/* TEXT */
+.text{
+    flex:1;
+}
+
+.text h2{
+    font-size:26px;
+    margin-bottom:10px;
+    color: #e2a90c;
+}
+
+/* LINE */
+.line{
+    width:40px;
+    height:3px;
+    margin-bottom:15px;
+}
+
+/* PARAGRAPH */
+.text p{
+    font-size:15px;
+    color:#111;
+    line-height:1.7;
+    margin-bottom:15px;
+}
+
+/* LIST */
+.text ul{
+    padding-left:18px;
+}
+
+.text li{
+    margin-bottom:6px;
+    font-size:14px;
+    color: #111;
+}
+
+/* COLORS */
+.campus .line{background:#2d89ef;}
+.classroom .line{background:#6a5acd;}
+.lab .line{background:#ff7043;}
+.library .line{background:#00a896;}
+.sports .line{background:#2e7d32;}
+.transport .line{background:#f4a261;}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .section{
+        flex-direction:column;
+        padding:40px 7%;
+    }
+}
+
+footer{
+    background:#070f24;
+    text-align:center;
+    padding:30px 15px;
+    margin-top:40px;
+    border-top:1px solid rgba(255,255,255,0.1);
+}
+
+footer h3{
+    color:var(--accent);
+    margin-bottom:8px;
+    color: #94a3b8;
+}
+
+footer p{
+    color:var(--muted);
+    font-size:14px;
+    color: #94a3b8;
+}
+
+.social{
+    margin-top:12px;
+    color: #94a3b8;
+}
+
+.social i{
+    margin:0 10px;
+    cursor:pointer;
+    color:white;
+    transition:0.3s;
+}
+
+.social i:hover{
+    transform:scale(1.3);
+}
+
+</style>
+</head>
+
+<body>
+<div id="navbar"></div>
+<!-- HEADER -->
+<div class="header">
+    <h1>🏫 Infrastructure & Facilities</h1>
+    <p>
+        Our school campus is thoughtfully designed to create a safe, modern, and inspiring 
+        environment that supports both academic excellence and overall student development.
+    </p>
+</div>
+
+<!-- CAMPUS -->
+<section class="section campus">
+    <div class="image">
+        <img src="https://media.istockphoto.com/id/1072477354/photo/indian-high-school-students-stock-image.webp?a=1&b=1&s=612x612&w=0&k=20&c=yE-FgfIGtfVThKxs_r-rWIY3GTSaBqTzpJg7gm7KPVs=">
+    </div>
+    <div class="text">
+        <h2>🏫 School Campus</h2>
+        <div class="line"></div>
+        <p>
+            A spacious and eco-friendly campus that provides a peaceful and secure atmosphere 
+            for students to learn and grow. The infrastructure is designed to balance academics, 
+            activities, and well-being.
+        </p>
+        <ul>
+            <li>✔ Green and clean surroundings</li>
+            <li>✔ Spacious classrooms & open areas</li>
+            <li>✔ 24/7 security & CCTV monitoring</li>
+            <li>✔ Separate zones for academics & sports</li>
+        </ul>
+    </div>
+</section>
+
+<!-- CLASSROOM -->
+<section class="section reverse classroom">
+    <div class="image">
+        <img src="https://plus.unsplash.com/premium_photo-1663090073232-a7e475ef1f38?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c21hcnQlMjBjbGFzc3Jvb218ZW58MHx8MHx8fDA%3D">
+    </div>
+    <div class="text">
+        <h2>📚 Smart Classrooms</h2>
+        <div class="line"></div>
+        <p>
+            Modern classrooms equipped with digital tools that make learning interactive, 
+            engaging, and effective for students of all levels.
+        </p>
+        <ul>
+            <li>✔ Smart boards & projectors</li>
+            <li>✔ Comfortable seating arrangement</li>
+            <li>✔ Well-ventilated and bright rooms</li>
+        </ul>
+    </div>
+</section>
+
+<!-- LAB -->
+<section class="section lab">
+    <div class="image">
+        <img src="https://plus.unsplash.com/premium_photo-1663100735245-51b57fe1e24a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFib3J0YXJpZXMlMjBmb3IlMjBzY2hvb2x8ZW58MHx8MHx8fDA%3D">
+    </div>
+    <div class="text">
+        <h2>🔬 Laboratories</h2>
+        <div class="line"></div>
+        <p>
+            Our labs provide hands-on learning experiences that help students understand 
+            concepts through practical application.
+        </p>
+        <ul>
+            <li>✔ Physics, Chemistry & Biology labs</li>
+            <li>✔ Fully equipped computer lab</li>
+            <li>✔ Safe and supervised environment</li>
+        </ul>
+    </div>
+</section>
+
+<!-- LIBRARY -->
+<section class="section reverse library">
+    <div class="image">
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f">
+    </div>
+    <div class="text">
+        <h2>📖 Library</h2>
+        <div class="line"></div>
+        <p>
+            A quiet and resource-rich library that encourages reading habits and 
+            independent learning among students.
+        </p>
+        <ul>
+            <li>✔ Wide range of books & journals</li>
+            <li>✔ Digital learning resources</li>
+            <li>✔ Peaceful study environment</li>
+        </ul>
+    </div>
+</section>
+
+<!-- SPORTS -->
+<section class="section sports">
+    <div class="image">
+        <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b">
+    </div>
+    <div class="text">
+        <h2>🏆 Sports Facilities</h2>
+        <div class="line"></div>
+        <p>
+            We provide excellent sports facilities to promote physical fitness, teamwork, 
+            and competitive spirit among students.
+        </p>
+        <ul>
+            <li>✔ Large playground</li>
+            <li>✔ Indoor & outdoor games</li>
+            <li>✔ Professional coaching support</li>
+        </ul>
+    </div>
+</section>
+
+<!-- TRANSPORT -->
+<section class="section reverse transport">
+    <div class="image">
+        <img src="https://media.istockphoto.com/id/1338736300/photo/multiethnic-mixed-race-pupils-classmates-schoolchildren-students-standing-in-line-waiting-for.webp?a=1&b=1&s=612x612&w=0&k=20&c=DTKnlOpDnETbT4OjUErw4q_PlgWGMoWsO3p4oxcUVWU=">
+    </div>
+    <div class="text">
+        <h2>🚌 Transport</h2>
+        <div class="line"></div>
+        <p>
+            Safe and reliable transport system ensuring timely and secure travel 
+            for all students across the city.
+        </p>
+        <ul>
+            <li>✔ GPS-enabled buses</li>
+            <li>✔ Experienced drivers & staff</li>
+            <li>✔ Wide route coverage</li>
+        </ul>
+    </div>
+</section>
+
+<footer class="custom-footer">
+    <h3>Our School</h3>
+    <p>© 2026 All Rights Reserved | Education is Power</p>
+
+    <div class="social">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-youtube"></i>
+    </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>

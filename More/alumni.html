@@ -1,0 +1,257 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css">
+<title>School Alumni Directory</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+  *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,var(--bg1),var(--bg2));
+    color:#001529;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+  h1 {
+    padding: 140px 20px 20px;
+    text-align: center;
+    color: #F59E0B;
+  }
+
+  .alumini-container {
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .form-box {
+    background:black;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(245,158,11,0.08);
+  }
+
+  input {
+    padding: 8px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  button {
+    padding: 8px 12px;
+    background: #1E293B;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #CBD5F5;
+  }
+
+  .delete-btn {
+    background:#F59E0B;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  }
+
+  th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+
+  th {
+   background-color:#F59E0B;
+    color:white;
+  }
+
+  .search-box {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+ footer{
+    background:#070f24;
+    text-align:center;
+    padding:30px 15px;
+    margin-top:150px;
+    border-top:1px solid rgba(255,255,255,0.1);
+    margin-top: auto; /* Ithu footer-a force panni keela thallidum */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+footer h3{
+    color:#CBD5F5;
+    margin-bottom:8px;
+}
+
+footer p{
+    color:#CBD5F5;
+    font-size:14px;
+}
+
+.social{
+    margin-top:12px;
+    color:#CBD5F5;
+}
+
+.social i{
+    margin:0 10px;
+    cursor:pointer;
+    color:#CBD5F5;
+    transition:0.3s;
+}
+
+.social i:hover{
+    color:#CBD5F5;
+    transform:scale(1.3);
+}
+</style>
+</head>
+
+<body>
+<div id="navbar"></div>
+<div class="alumini-container">
+  <h1>School Alumni Directory</h1>
+
+  <!-- Add Alumni -->
+  <div class="form-box">
+    <input type="text" id="name" placeholder="Student Name">
+    <input type="text" id="batch" placeholder="Batch Year">
+    <input type="text" id="class" placeholder="Class (10th/12th)">
+    <input type="text" id="profession" placeholder="Current Profession">
+    <input type="text" id="contact" placeholder="Contact">
+    <button onclick="addAlumni()">Add</button>
+  </div>
+
+  <!-- Search -->
+  <div class="search-box">
+    <input type="text" id="search" placeholder="Search by name..." onkeyup="searchAlumni()" style="width:60%;">
+  </div>
+
+  <!-- Table -->
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Batch</th>
+        <th>Class</th>
+        <th>Profession</th>
+        <th>Contact</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="alumniTable"></tbody>
+  </table>
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+    <h3>Our School</h3>
+    <p>© 2026 All Rights Reserved | Education is Power</p>
+
+    <div class="social">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-youtube"></i>
+    </div>
+</footer>
+
+<script>
+let alumniList = [];
+
+function addAlumni() {
+  let name = document.getElementById("name").value;
+  let batch = document.getElementById("batch").value;
+  let studentClass = document.getElementById("class").value;
+  let profession = document.getElementById("profession").value;
+  let contact = document.getElementById("contact").value;
+
+  if (!name || !batch || !studentClass || !profession || !contact) {
+    alert("Please fill all fields!");
+    return;
+  }
+
+  let alumni = {
+    id: Date.now(),
+    name,
+    batch,
+    studentClass,
+    profession,
+    contact
+  };
+
+  alumniList.push(alumni);
+  displayAlumni(alumniList);
+
+  // Clear inputs
+  document.getElementById("name").value = "";
+  document.getElementById("batch").value = "";
+  document.getElementById("class").value = "";
+  document.getElementById("profession").value = "";
+  document.getElementById("contact").value = "";
+}
+
+function displayAlumni(data) {
+  let table = document.getElementById("alumniTable");
+  table.innerHTML = "";
+
+  data.forEach(a => {
+    table.innerHTML += `
+      <tr>
+        <td>${a.name}</td>
+        <td>${a.batch}</td>
+        <td>${a.studentClass}</td>
+        <td>${a.profession}</td>
+        <td>${a.contact}</td>
+        <td>
+          <button class="delete-btn" onclick="deleteAlumni(${a.id})">Delete</button>
+        </td>
+      </tr>
+    `;
+  });
+}
+
+function deleteAlumni(id) {
+  alumniList = alumniList.filter(a => a.id !== id);
+  displayAlumni(alumniList);
+}
+
+function searchAlumni() {
+  let value = document.getElementById("search").value.toLowerCase();
+
+  let filtered = alumniList.filter(a =>
+    a.name.toLowerCase().includes(value)
+  );
+
+  displayAlumni(filtered);
+}
+</script>
+<script src="../script.js"></script>
+</body>
+</html>

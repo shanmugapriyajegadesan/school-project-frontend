@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>School Trust</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../style.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg1:white;
+    --bg2:white;
+    --card:#0f1f3a;
+    --accent:#facc15;
+    --text:#ffffff;
+    --muted:#cbd5e1;
+}
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif; 
+    background: linear-gradient(135deg,var(--bg1),var(--bg2));
+    color:#001529; 
+    overflow-x:hidden;
+}
+
+/* HEADER */
+.header{
+    text-align:center;
+    padding:140px 20px 20px;
+}
+
+.header h1{
+    font-size:46px;
+    color:#0f1f3a;
+}
+
+.header p{
+    color:var(--muted);
+    margin-top:10px;
+}
+
+/* HERO */
+.hero{
+    width:85%;
+    margin:20px auto;
+    height:320px;
+    border-radius:25px;
+    overflow:hidden;
+    position:relative;
+}
+
+.hero img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.6s ease;
+}
+
+.hero:hover img{
+    transform:scale(1.12);
+}
+
+.hero::after{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.45);
+}
+
+.overlay{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    text-align:center;
+}
+
+.overlay h2{
+    color:white;
+}
+
+/* CONTAINER - UPDATED FOR 3 COLUMNS */
+.trust-container{
+    width:85%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr); /* Oru row-ku 3 cards */
+    gap:25px;
+    padding:40px 0;
+}
+
+/* RESPONSIVE DESIGN FOR TABLETS & MOBILES */
+@media (max-width: 1024px) {
+    .trust-container{
+        grid-template-columns:repeat(2, 1fr); /* Tablet-la 2 cards */
+    }
+}
+
+@media (max-width: 768px) {
+    .trust-container{
+        grid-template-columns: 1fr; /* Mobile-la 1 card */
+    }
+}
+
+/* CARD */
+.card{
+    background:var(--card);
+    padding:25px;
+    border-radius:22px;
+    border:1px solid rgba(255,255,255,0.08);
+    transition:0.4s ease;
+}
+
+/* ✨ IMPROVED HOVER */
+.card:hover{
+    transform:translateY(-14px) scale(1.04);
+    box-shadow:0 15px 35px rgba(0,0,0,0.35),
+               0 0 30px var(--accent),
+               0 0 60px rgba(250,204,21,0.3);
+    border:1px solid var(--accent);
+}
+
+/* 🔥 ICON BIGGER */
+.icon-box{
+    width:80px;
+    height:80px;
+    border-radius:20px;
+    background: linear-gradient(135deg,var(--accent),#fff3a0);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:15px;
+    transition:0.4s;
+}
+
+.icon-box i{
+    font-size:32px;
+    color:#0a1630;
+}
+
+/* 💫 ICON HOVER */
+.card:hover .icon-box{
+    transform:scale(1.2) rotate(8deg);
+    box-shadow:0 0 20px var(--accent),
+               0 0 40px rgba(250,204,21,0.4);
+}
+
+/* TEXT */
+.card h3{
+    color:var(--accent);
+    margin-bottom:10px;
+}
+
+.point{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    margin:10px 0;
+    font-size:14px;
+    line-height:1.6;
+    color:var(--text);
+}
+
+.point i{
+    color:var(--accent);
+    margin-top:4px;
+    min-width:18px;
+}
+
+/* FOOTER */
+footer{
+    background:#070f24;
+    text-align:center;
+    padding:40px 20px;
+    margin-top:40px;
+}
+
+footer h3{
+    color:var(--accent);
+}
+
+footer p{
+    color:var(--muted);
+}
+
+.social i{
+    margin:0 10px;
+    cursor:pointer;
+    transition:0.3s;
+    color:white;
+}
+
+.social i:hover{
+    color:var(--accent);
+    transform:scale(1.3);
+}
+
+</style>
+</head>
+
+<body>
+<div id="navbar"></div>
+<div class="header">
+    <h1>School Trust</h1>
+    <p>Strong Foundation Behind Quality Education</p>
+</div>
+
+<div class="hero">
+    <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df" alt="School Trust Hero">
+    <div class="overlay">
+        <h2>Building Education with Trust & Responsibility</h2>
+    </div>
+</div>
+
+<div class="trust-container">
+
+    <div class="card">
+        <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3>Purpose of the Trust</h3>
+
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Provide quality education for all students</div>
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Build safe and disciplined environment</div>
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Ensure equal learning opportunities</div>
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Support student growth and development</div>
+    </div>
+
+    <div class="card">
+        <div class="icon-box"><i class="fa-solid fa-building-columns"></i></div>
+        <h3>Foundation Strength</h3>
+
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Strong leadership team</div>
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Transparent administration</div>
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Continuous improvement system</div>
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Long-term educational vision</div>
+    </div>
+
+    <div class="card">
+        <div class="icon-box"><i class="fa-solid fa-handshake"></i></div>
+        <h3>Trust Responsibilities</h3>
+
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Manage school operations</div>
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Maintain teaching quality</div>
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Provide infrastructure support</div>
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Ensure discipline and ethics</div>
+    </div>
+
+    <div class="card">
+        <div class="icon-box"><i class="fa-solid fa-heart"></i></div>
+        <h3>Trust Values</h3>
+
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Commitment to education excellence</div>
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Honesty and transparency</div>
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Respect for students & staff</div>
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Social responsibility</div>
+    </div>
+
+    <div class="card">
+        <div class="icon-box"><i class="fa-solid fa-user-graduate"></i></div>
+        <h3>Student Support System</h3>
+
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Academic guidance & counseling</div>
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Equal attention to all students</div>
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Extra skill development programs</div>
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Personality development focus</div>
+    </div>
+
+</div>
+
+<footer>
+    <h3>School Trust</h3>
+    <p>© 2026 All Rights Reserved</p>
+
+    <div class="social">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-youtube"></i>
+    </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>

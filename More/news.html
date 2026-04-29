@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Events</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            background: white;
+            color: #F59E0B;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navbar Z-Index fix so dropdown doesn't hide behind cards */
+        #navbar {
+            position: relative;
+            z-index: 999;
+        }
+        .section-title {
+            text-align: center;
+            color: #F59E0B;
+            font-size: 28px;
+            padding: 140px;
+            margin-bottom: 30px;
+        }
+
+        /* Main Content Wrapper */
+        .main-content {
+            flex: 1;
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        /* The Grid Container for Cards */
+        .news-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        /* Individual News Card */
+        .news-card {
+            background: #1E293B;
+            border: 1px solid rgba(225, 225, 225, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(245, 158, 11, 0.08);
+            transition: 0.3s;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Keeps the badge neatly aligned left */
+        }
+
+        /* Hover Effect */
+        .news-card:hover {
+            transform: translateY(-5px);
+            background: rgba(245, 158, 11, 0.08);
+        }
+
+        /* Title */
+        .news-title {
+            color: #CBD5F5;
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        /* Date */
+        .news-date {
+            color: #94A3B8;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        /* Description */
+        .news-desc {
+            color: #CBD5F5;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            background: rgba(245, 158, 11, 0.2);
+            color: #F59E0B;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: #070f24;
+            text-align: center;
+            padding: 30px 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        footer h3 {
+            color: #94A3B8;
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #94A3B8;
+            font-size: 14px;
+        }
+
+        .social {
+            margin-top: 12px;
+        }
+
+        .social i {
+            margin: 0 10px;
+            cursor: pointer;
+            color: #94A3B8;
+            transition: 0.3s;
+            font-size: 18px;
+        }
+
+        .social i:hover {
+            color: #F59E0B;
+            transform: scale(1.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar"></div>
+
+    <div class="main-content">
+        <h2 class="section-title">📰 News & Events</h2>
+        
+        <div class="news-container">
+            
+            <div class="news-card">
+                <div class="badge">New</div>
+                <div class="news-title">Annual Day Celebration</div>
+                <div class="news-date">April 25, 2026</div>
+                <div class="news-desc">Join us for cultural programs and prize distribution ceremony.</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-title">Exam Timetable Released</div>
+                <div class="news-date">April 10, 2026</div>
+                <div class="news-desc">Students can check the final exam schedule from the portal.</div>
+            </div>
+
+            <div class="news-card">
+                <div class="badge">Event</div>
+                <div class="news-title">Sports Day Registration</div>
+                <div class="news-date">April 20, 2026</div>
+                <div class="news-desc">Register now to participate in various sports activities.</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-title">Parent-Teacher Meeting</div>
+                <div class="news-date">April 18, 2026</div>
+                <div class="news-desc">Discuss student progress with teachers.</div>
+            </div>
+
+        </div> </div>
+
+    <footer>
+        <h3>Our School</h3>
+        <p>© 2026 All Rights Reserved | Education is Power</p>
+
+        <div class="social">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </div>
+    </footer>
+    
+    <script src="../script.js"></script>
+</body>
+</html>

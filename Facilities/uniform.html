@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Facilities</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,var(--bg1),var(--bg2));
+    color:#001529;
+}
+
+.section-title{
+    text-align:center;
+    padding:140px 20px 30px;
+    background: #0a192f;
+}
+
+.section-title h1{
+    font-size:38px;
+    color: #e2a90c;
+}
+
+.section-title p{
+    color:#94a3b8;
+}
+
+/* ROW */
+.row{
+    display:flex;
+    align-items:center;
+    gap:60px;
+    padding:60px 10%;
+}
+
+/* REVERSE */
+.row.reverse{
+    flex-direction:row-reverse;
+}
+
+/* IMAGE */
+.img-box{
+    flex:1;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.img-box img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    transition:0.6s;
+}
+
+.img-box img:hover{
+    transform:scale(1.08);
+}
+
+/* CONTENT */
+.content{
+    flex:1;
+}
+
+.content h2{
+    font-size:30px;
+    margin-bottom:10px;
+    color: #e2a90c;
+}
+
+/* LINE */
+.line{
+    width:60px;
+    height:4px;
+    margin-bottom:20px;
+}
+
+/* TEXT */
+.content p{
+    color:#111;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+/* LIST */
+.content ul{
+    padding-left:18px;
+    color: #111;
+}
+
+.content li{
+    margin-bottom:8px;
+}
+
+/* MAP */
+.map-container{
+    position:relative;
+    margin-top:30px;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.map-container iframe{
+    width:100%;
+    height:400px;
+    border:0;
+}
+
+/* BUS ICON */
+#bus{
+    position:absolute;
+    font-size:28px;
+    top:50%;
+    left:10%;
+    transform:translate(-50%, -50%);
+    transition:1s linear;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .row, .row.reverse{
+        flex-direction:column;
+    }
+}
+
+footer{
+    background:#070f24;
+    text-align:center;
+    padding:30px 15px;
+    margin-top:40px;
+    border-top:1px solid rgba(255,255,255,0.1);
+}
+
+footer h3{
+    color:var(--accent);
+    margin-bottom:8px;
+    color: #94a3b8;
+}
+
+footer p{
+    color:var(--muted);
+    font-size:14px;
+    color: #94a3b8;
+}
+
+.social{
+    margin-top:12px;
+    color: #94a3b8;
+}
+
+.social i{
+    margin:0 10px;
+    cursor:pointer;
+    color:white;
+    transition:0.3s;
+}
+
+.social i:hover{
+    transform:scale(1.3);
+}
+</style>
+</head>
+
+<body>
+<div id="navbar"></div>
+<!-- TITLE -->
+<div class="section-title">
+    <h1>🎒 School Facilities</h1>
+    <p>Ensuring comfort, discipline, and safety for every student</p>
+</div>
+
+<!-- UNIFORM -->
+<section class="row uniform">
+    <div class="img-box">
+        <img src="https://media.istockphoto.com/id/1343472952/photo/happy-school-girls-walking-together-in-a-school-corridor-while-talking-to-each-other.webp?a=1&b=1&s=612x612&w=0&k=20&c=_1TGKXQzzc3H5lQoHA1-ciYpBU_D5K2zPR0Sdk4bLac=">
+    </div>
+
+    <div class="content">
+        <h2>👕 School Uniform</h2>
+        <div class="line"></div>
+
+        <p>
+            Our school uniform reflects discipline, equality, and pride. 
+            Students are expected to maintain a neat and tidy appearance 
+            that represents the school’s values and identity.
+        </p>
+
+        <ul>
+            <li>✔ Seasonal uniforms (summer & winter)</li>
+            <li>✔ Sports uniform for physical education</li>
+            <li>✔ ID card mandatory for all students</li>
+            <li>✔ Comfortable and high-quality fabric</li>
+        </ul>
+    </div>
+</section>
+
+<!-- TRANSPORT -->
+<section class="row reverse transport">
+    <div class="img-box">
+        <img src="https://media.istockphoto.com/id/1338736300/photo/multiethnic-mixed-race-pupils-classmates-schoolchildren-students-standing-in-line-waiting-for.webp?a=1&b=1&s=612x612&w=0&k=20&c=DTKnlOpDnETbT4OjUErw4q_PlgWGMoWsO3p4oxcUVWU=">
+    </div>
+
+    <div class="content">
+        <h2>🚌 School Transport</h2>
+        <div class="line"></div>
+
+        <p>
+            Our transport system ensures safe and reliable travel for students. 
+            The school operates a fleet of well-maintained buses covering major routes 
+            with trained drivers and attendants.
+        </p>
+
+        <ul>
+            <li>✔ GPS-enabled school buses</li>
+            <li>✔ Experienced drivers & female attendants</li>
+            <li>✔ Strict safety and timing protocols</li>
+            <li>✔ Wide route coverage across the city</li>
+        </ul>
+    </div>
+</section>
+
+<!-- LIVE MAP + GPS TRACKING -->
+<section style="padding:60px 10%;">
+
+    <div class="content">
+        <h2>📍 Live Transport Tracking</h2>
+        <div class="line" style="background:#43e97b;"></div>
+
+        <p>
+            Parents can monitor real-time bus movement with our GPS-enabled tracking system. 
+            This ensures student safety and accurate arrival updates.
+        </p>
+    </div>
+
+    <!-- GOOGLE MAP -->
+    <div class="map-container">
+        <iframe 
+            src="https://maps.google.com/maps?q=Chennai%20School&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            allowfullscreen>
+        </iframe>
+
+        <!-- MOVING BUS -->
+        <div id="bus">🚌</div>
+    </div>
+</section>
+
+<footer class="custom-footer">
+    <h3>Our School</h3>
+    <p>© 2026 All Rights Reserved | Education is Power</p>
+
+    <div class="social">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-youtube"></i>
+    </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>

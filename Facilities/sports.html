@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Sports</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,var(--bg1),var(--bg2));
+    color:#001529;
+}
+
+.section-title{
+    text-align:center;
+    padding:140px 20px 30px;
+    background:#0a192f;
+}
+
+.section-title h1{
+    font-size:40px;
+    color: #e2a90c;
+}
+
+.section-title p{
+    color:#94a3b8;
+    font-size:1rem;
+}
+
+/* ROW */
+.sport-row{
+    display:flex;
+    align-items:center;
+    padding:60px 10%;
+    gap:60px;
+}
+
+/* REVERSE */
+.sport-row.reverse{
+    flex-direction:row-reverse;
+}
+
+/* IMAGE */
+.sport-img{
+    flex:1;
+    overflow:hidden;
+    border-radius:20px;
+}
+
+.sport-img img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    transition:0.6s;
+}
+
+.sport-img img:hover{
+    transform:scale(1.08);
+}
+
+/* CONTENT */
+.sport-content{
+    flex:1;
+}
+
+/* TITLE */
+.sport-content h2{
+    font-size:32px;
+    margin-bottom:10px;
+    color: #e2a90c;
+}
+
+/* LINE (COMPETENCY COLOR) */
+.line{
+    width:60px;
+    height:4px;
+    margin-bottom:20px;
+}
+
+/* TEXT */
+.sport-content p{
+    color:#111;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+/* LIST */
+.sport-content ul{
+    padding-left:18px;
+}
+
+.sport-content li{
+    margin-bottom:8px;
+    color:#111;
+}
+
+/* COLORS */
+.football .line{background:#111;}
+.cricket .line{background:#111;}
+.basketball .line{background:#111;}
+.athletics .line{background:#111;}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .sport-row{
+        flex-direction:column;
+    }
+    .sport-row.reverse{
+        flex-direction:column;
+    }
+}
+
+footer{
+    background:#070f24;
+    text-align:center;
+    padding:30px 15px;
+    margin-top:40px;
+    border-top:1px solid rgba(255,255,255,0.1);
+}
+
+footer h3{
+    color:var(--accent);
+    margin-bottom:8px;
+    color: #94a3b8;
+}
+
+footer p{
+    color:var(--muted);
+    font-size:14px;
+    color: #94a3b8;
+}
+
+.social{
+    margin-top:12px;
+    color: #94a3b8;
+}
+
+.social i{
+    margin:0 10px;
+    cursor:pointer;
+    color:white;
+    transition:0.3s;
+}
+
+.social i:hover{
+    transform:scale(1.3);
+}
+
+</style>
+</head>
+
+<body>
+<div id="navbar"></div>
+<!-- TITLE -->
+<div class="section-title">
+    <h1>🏆 School Sports Program</h1>
+    <p>Developing discipline, teamwork, and excellence through sports</p>
+</div>
+
+<!-- FOOTBALL -->
+<section class="sport-row football">
+    <div class="sport-img">
+        <img src="https://media.istockphoto.com/id/1445090503/photo/kids-team-soccer-or-legs-with-soccer-ball-in-workout-fitness-game-or-exercise-on-nature-park.webp?a=1&b=1&s=612x612&w=0&k=20&c=5ajw0S5E6lGLlxSM1BNrfl0xFrJkakYwV5sz5Idtybs=">
+    </div>
+    <div class="sport-content">
+        <h2>⚽ Football Excellence</h2>
+        <div class="line"></div>
+        <p>
+            Our football program focuses on teamwork, leadership, and strategic thinking.
+            Students actively participate in inter-school tournaments and district-level competitions.
+        </p>
+        <ul>
+            <li>✔ Weekly professional coaching</li>
+            <li>✔ Inter-school championship participation</li>
+            <li>✔ Fitness & endurance training</li>
+        </ul>
+    </div>
+</section>
+
+<!-- CRICKET -->
+<section class="sport-row reverse cricket">
+    <div class="sport-img">
+        <img src="https://images.unsplash.com/photo-1685541000777-8d0995d38909?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNyaWNrZXQlMjBmb3IlMjBzY2hvb2wlMjBzdHVkZW50fGVufDB8fDB8fHww">
+    </div>
+    <div class="sport-content">
+        <h2>🏏 Cricket Academy</h2>
+        <div class="line"></div>
+        <p>
+            Our cricket academy provides structured training with experienced coaches,
+            helping students achieve excellence at state and national levels.
+        </p>
+        <ul>
+            <li>✔ Advanced batting & bowling techniques</li>
+            <li>✔ Tournament exposure</li>
+            <li>✔ Team strategy development</li>
+        </ul>
+    </div>
+</section>
+
+<!-- BASKETBALL -->
+<section class="sport-row basketball">
+    <div class="sport-img">
+        <img src="https://images.unsplash.com/photo-1721339039006-af1a41ff9233?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGJhc2tldGJhbGwlMjBmb3IlMjBzY2hvb2wlMjBzdHVkZW50fGVufDB8fDB8fHww">
+    </div>
+    <div class="sport-content">
+        <h2>🏀 Basketball Training</h2>
+        <div class="line"></div>
+        <p>
+            Basketball enhances agility, coordination, and quick decision-making.
+            Our students consistently perform in zonal and inter-school matches.
+        </p>
+        <ul>
+            <li>✔ Daily practice sessions</li>
+            <li>✔ Speed & agility drills</li>
+            <li>✔ Competitive matches</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ATHLETICS -->
+<section class="sport-row reverse athletics">
+    <div class="sport-img">
+        <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b">
+    </div>
+    <div class="sport-content">
+        <h2>🏃 Athletics Program</h2>
+        <div class="line"></div>
+        <p>
+            Athletics builds stamina, strength, and mental discipline. Students participate
+            in track & field events and represent the school at district and state levels.
+        </p>
+        <ul>
+            <li>✔ Track & field training</li>
+            <li>✔ Endurance & sprint coaching</li>
+            <li>✔ Annual sports meet participation</li>
+        </ul>
+    </div>
+</section>
+
+<footer class="custom-footer">
+    <h3>Our School</h3>
+    <p>© 2026 All Rights Reserved | Education is Power</p>
+
+    <div class="social">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-youtube"></i>
+    </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>

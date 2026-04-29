@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Management</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../style.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --bg1:#ffffff;
+    --bg2:#ffffff;
+    --card:#001529;
+    --accent:#D4AF37;
+    --text:#ffffff;
+    --muted:#6b7280;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif; /* Ithu mattum add pannunga */
+    background: linear-gradient(135deg,var(--bg1),var(--bg2));
+    color:#001529; 
+    overflow-x:hidden;
+}
+/* HEADER */
+.header{
+    text-align:center;
+    padding:140px 20px 20px;
+}
+
+.header h1{
+    font-size:46px;
+    color:#001529;
+}
+
+.header p{
+    color:var(--muted);
+    margin-top:10px;
+}
+
+/* CONTAINER */
+.management-container{
+    width:85%;
+    margin:auto;
+    padding:30px 0;
+}
+
+/* CARD */
+.card{
+    background:var(--card);
+    padding:30px;
+    border-radius:22px;
+    border:1px solid rgba(255,255,255,0.1);
+    transition:0.4s ease;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.01);
+    box-shadow:0 12px 30px rgba(0,0,0,0.25),
+               0 0 25px var(--accent);
+    border:1px solid var(--accent);
+}
+
+/* PHOTO BOX */
+.image-box{
+    width:100%;
+    height:380px;
+    border-radius:18px;
+    overflow:hidden;
+    margin-bottom:20px;
+    border:2px solid var(--accent);
+}
+
+.image-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.5s;
+}
+
+.image-box:hover img{
+    transform:scale(1.08);
+}
+
+/* TITLE */
+.card h2{
+    color:var(--accent);
+    margin-bottom:10px;
+}
+
+/* TEXT */
+.card p{
+    font-size:15px;
+    line-height:1.7;
+    margin-bottom:15px;
+    color:var(--text);
+}
+
+/* POINT */
+.point{
+    display:flex;
+    gap:10px;
+    margin:10px 0;
+    font-size:14px;
+    color:var(--text);
+}
+
+.point i{
+    color:var(--accent);
+    min-width:18px;
+    margin-top:4px;
+}
+
+/* SIGN */
+.signature{
+    margin-top:20px;
+    font-weight:600;
+    color:var(--accent);
+}
+
+/* FOOTER */
+footer{
+    background:#001529;
+    text-align:center;
+    padding:30px 15px;
+    margin-top:40px;
+    border-top:2px solid var(--accent);
+}
+
+footer h3{
+    color:var(--accent);
+    margin-bottom:8px;
+}
+
+footer p{
+    color:#cbd5e1;
+    font-size:14px;
+}
+
+.social{
+    margin-top:12px;
+}
+
+.social i{
+    margin:0 10px;
+    cursor:pointer;
+    color:white;
+    transition:0.3s;
+}
+
+.social i:hover{
+    color:var(--accent);
+    transform:scale(1.3);
+}
+
+</style>
+</head>
+
+<body>
+<div id="navbar"></div>
+<div class="header">
+    <h1>Management</h1>
+    <p>Leadership • Planning • Excellence</p>
+</div>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="image-box">
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d">
+        </div>
+
+        <h2>School Management</h2>
+
+        <p>
+            Our school management plays a vital role in maintaining discipline,
+            ensuring quality education, and guiding the institution towards success.
+        </p>
+
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Strong leadership and guidance</div>
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Transparent administration system</div>
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Focus on student development</div>
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Continuous improvement approach</div>
+        <div class="point"><i class="fa-solid fa-circle-check"></i> Support for teachers and staff</div>
+
+        <p class="signature">— School Management Team</p>
+
+    </div>
+
+</div>
+
+<footer>
+    <h3>Our School</h3>
+    <p>© 2026 All Rights Reserved | Education is Power</p>
+
+    <div class="social">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-youtube"></i>
+    </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>

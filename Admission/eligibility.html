@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eligibility</title>
+<link rel="stylesheet" href="../style.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif; /* Ithu mattum add pannunga */
+    background: linear-gradient(135deg,var(--bg1),var(--bg2));
+    color:#001529; 
+    overflow-x:hidden;
+}
+.section{
+  padding:140px 8%;
+}
+
+.title{
+  text-align:center;
+  font-size:34px;
+  font-weight:600;
+  margin-bottom:50px;
+  color:#333;
+}
+
+.list{
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+}
+
+.item{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  background:#1E293B;
+  padding:15px;
+  border-radius:14px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.06);
+  transition:0.3s;
+}
+
+.item:hover{
+  transform:translateX(10px);
+}
+
+.item img{
+  width:120px;
+  height:90px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+.content{
+  flex:1;
+}
+
+.tag{
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:15px;
+  font-size:12px;
+  color:#333;
+  margin-bottom:6px;
+  background: #fff;
+}
+.content h3{
+  font-size:18px;
+  margin-bottom:5px;
+  color:#e2a90c;
+}
+
+.content p{
+  font-size:14px;
+  color:#94a3b8;
+}
+
+footer{
+    background:#070f24;
+    text-align:center;
+    padding:30px 15px;
+    margin-top:40px;
+    border-top:1px solid rgba(255,255,255,0.1);
+}
+
+footer h3{
+    color:var(--accent);
+    margin-bottom:8px;
+    color: #94a3b8;
+}
+
+footer p{
+    color:var(--muted);
+    font-size:14px;
+    color: #94a3b8;
+}
+
+.social{
+    margin-top:12px;
+}
+
+.social i{
+    margin:0 10px;
+    cursor:pointer;
+    color:white;
+    transition:0.3s;
+}
+
+.social i:hover{
+    transform:scale(1.3);
+}
+</style>
+</head>
+
+<body>
+<div id="navbar"></div>
+<section class="section">
+  <div class="title">Eligibility for School Joining</div>
+
+  <div class="list">
+
+    <div class="item">
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b">
+      <div class="content">
+        <span class="tag c1">Age Criteria</span>
+        <h3>Minimum Age Requirement</h3>
+        <p>Students must meet the required age criteria for the respective grade.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="https://images.unsplash.com/photo-1588072432904-843af37f03ed">
+      <div class="content">
+        <span class="tag c2">Academic</span>
+        <h3>Previous Records</h3>
+        <p>Report cards or previous academic records must be submitted.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7">
+      <div class="content">
+        <span class="tag c3">Assessment</span>
+        <h3>Entrance Test</h3>
+        <p>Students may attend a test or interaction based on grade level.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e">
+      <div class="content">
+        <span class="tag c4">Documents</span>
+        <h3>Required Docs</h3>
+        <p>Birth certificate, TC, ID proof, and photos are required.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
+      <div class="content">
+        <span class="tag c5">Health</span>
+        <h3>Medical Fitness</h3>
+        <p>Basic health certificate may be required for admission.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <h3>Our School</h3>
+    <p>© 2026 All Rights Reserved | Education is Power</p>
+
+    <div class="social">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-youtube"></i>
+    </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>

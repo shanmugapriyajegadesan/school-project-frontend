@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Timings & Policy | EduStream</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+         :root{
+    --accent:#F59E0B;
+    --muted:#94A3B8;
+}
+        
+     *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif; /* Ithu mattum add pannunga */
+    background: linear-gradient(135deg,var(--bg1),var(--bg2));
+    color:#001529; 
+    overflow-x:hidden;
+}   
+
+        /* --- TIMING SECTION --- */
+        .timing-section { padding: 140px 10%; background: #FFFFFF; }
+        .timing-section h2 { text-align: center; color: #F59E0B; font-size: 2.8rem; font-weight: 700; }
+        .timing-section p.intro { text-align: center; color: #64748B; margin: 10px 0 40px; }
+
+        .policy-container {
+            max-width: 850px;
+            margin: 0 auto 30px;
+            background: rgba(245, 158, 11, 0.08);
+            border-left: 4px solid #F59E0B;
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .policy-container i { color: #F59E0B; font-size: 24px; }
+        .policy-text h4 { color: #1E293B; font-size: 16px; margin-bottom: 5px; font-weight: 700; }
+        .policy-text p { color: #475569; font-size: 14px; line-height: 1.5; }
+
+        .timing-table {
+            width: 100%; max-width: 850px; margin: 0 auto;
+            border-collapse: collapse; 
+            background: #1E293B; 
+            border-radius: 15px; overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        .timing-table th { background: #F59E0B; color: #0F172A; padding: 20px; text-align: left; font-weight: 700; }
+        .timing-table td { padding: 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: #CBD5F5; font-size: 15px; }
+        .timing-table tr:hover { background: rgba(245, 158, 11, 0.1); transition: 0.3s; }
+        .timing-table i { color: #F59E0B; margin-right: 12px; width: 20px; text-align: center; }
+
+        /* --- UPDATED PREMIUM FOOTER STYLES --- */
+        footer{
+    background:#070f24;
+    text-align:center;
+    padding:30px 15px;
+    margin-top:40px;
+    border-top:1px solid rgba(255,255,255,0.1);
+}
+
+footer h3{
+    color:var(--accent);
+    margin-bottom:8px;
+    
+}
+
+footer p{
+    color:var(--muted);
+    font-size:14px;
+    
+}
+
+.social{
+    margin-top:12px;
+}
+
+.social i{
+    margin:0 10px;
+    cursor:pointer;
+    color:#FFFFFF;
+    transition:0.3s;
+}
+
+.social i:hover{
+    color:var(--accent);
+    transform:scale(1.3);
+}
+
+        @media (max-width: 768px) {
+            .timing-section { padding: 60px 5%; }
+            .footer-grid { flex-direction: column; text-align: center; }
+            .footer-col h4::after { left: 50%; transform: translateX(-50%); }
+            .social, .contact-list li { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+<div id="navbar"></div>
+    <section class="timing-section">
+        <h2>School Hours</h2>
+        <p class="intro">Ensuring a disciplined and balanced routine for academic excellence.</p>
+
+        <div class="policy-container">
+            <i class="fas fa-exclamation-circle"></i>
+            <div class="policy-text">
+                <h4>Important Attendance Policy</h4>
+                <p>Students must report at least 10 minutes before the Morning Assembly (08:20 AM). Late arrivals will be recorded and may require parental notification.</p>
+            </div>
+        </div>
+
+        <table class="timing-table">
+            <thead>
+                <tr>
+                    <th><i class="fas fa-list"></i> Category</th>
+                    <th><i class="fas fa-clock"></i> Working Hours</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><i class="fas fa-calendar-week"></i> Working Days</td>
+                    <td>Monday - Friday (Full Day), Saturday (Half Day)</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-child"></i> Kindergarten (Pre-KG to UKG)</td>
+                    <td>08:30 AM - 12:30 PM</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-user-graduate"></i> Primary & Secondary</td>
+                    <td>08:30 AM - 03:45 PM</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-flag"></i> Morning Assembly</td>
+                    <td>08:30 AM - 08:50 AM</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-coffee"></i> Short Break</td>
+                    <td>10:45 AM - 11:00 AM</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-utensils"></i> Lunch Break</td>
+                    <td>12:30 PM - 01:15 PM</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-running"></i> After School Sports</td>
+                    <td>04:00 PM - 05:30 PM</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-headset"></i> Administrative Office</td>
+                    <td>08:00 AM - 05:00 PM</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <footer class="custom-footer">
+    <h3>Our School</h3>
+    <p>© 2026 All Rights Reserved | Education is Power</p>
+
+    <div class="social">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-youtube"></i>
+    </div>
+</footer>
+<script src="../script.js"></script>
+</body>
+</html>

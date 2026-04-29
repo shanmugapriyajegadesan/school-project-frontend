@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Rules & Regulations</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        /* BODY */
+        body {
+            background: white;
+            color: #CBD5F5;
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navbar Z-Index fix */
+        #navbar {
+            position: relative;
+            z-index: 999;
+        }
+
+        /* MAIN CONTENT WRAPPER - Pushes footer down */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 50px;
+        }
+
+        /* BACKGROUND GLOW */
+        .bg-glow {
+            position: fixed;
+            width: 450px;
+            height: 450px;
+            background: rgba(245,158,11,0.08);
+            filter: blur(120px);
+            top: -120px;
+            right: -120px;
+            z-index: -1; /* Keeps glow behind everything */
+            pointer-events: none; /* Prevents glow from blocking clicks */
+        }
+
+        /* HEADER */
+        header {
+            text-align: center;
+            padding: 140px 20px;
+        }
+
+        header h1 {
+            color: #F59E0B;
+            font-size: 32px;
+        }
+
+        header p {
+            color: #94A3B8;
+            margin-top: 6px;
+        }
+
+        /* CONTAINER */
+        .rules-container {
+            width: 90%;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        /* ACCORDION ITEM */
+        .item {
+            background: #0F172A; /* Slightly lighter than pure black for better look */
+            margin-bottom: 12px;
+            border-radius: 10px;
+            border: 1px solid rgba(225,225,225,0.05);
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .item:hover {
+            background: #1E293B;
+        }
+
+        /* QUESTION BUTTON */
+        .question {
+            width: 100%;
+            padding: 18px 20px;
+            text-align: left;
+            background: transparent;
+            border: none;
+            color: #CBD5F5;
+            font-size: 16px;
+            cursor: pointer;
+            position: relative;
+            font-weight: 500;
+        }
+
+        /* PLUS / MINUS ICON */
+        .question::after {
+            content: "+";
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #F59E0B;
+            font-size: 22px;
+            transition: 0.3s;
+        }
+
+        .item.active .question::after {
+            content: "−"; /* Using real minus sign for better alignment */
+        }
+
+        /* ANSWER */
+        .answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 20px;
+            color: #94A3B8;
+        }
+
+        .answer p {
+            padding-bottom: 18px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* ACTIVE STATE */
+        .item.active {
+            box-shadow: 0 0 15px rgba(245,158,11,0.1);
+            border: 1px solid rgba(245,158,11,0.2);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #070f24;
+            text-align: center;
+            padding: 30px 15px;
+            margin-top: auto;
+            width: 100%;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        footer h3 {
+            color: #94A3B8; /* Fixed variable issue */
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #94A3B8; /* Fixed variable issue */
+            font-size: 14px;
+        }
+
+        .social {
+            margin-top: 12px;
+        }
+
+        .social i {
+            margin: 0 10px;
+            cursor: pointer;
+            color: #94A3B8;
+            transition: 0.3s;
+            font-size: 18px;
+        }
+
+        .social i:hover {
+            color: #F59E0B; /* Fixed variable issue */
+            transform: scale(1.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <div class="bg-glow"></div>
+
+    <div class="main-content">
+        <header>
+            <h1>Rules & Regulations</h1>
+            <p>Please read all rules carefully before proceeding</p>
+        </header>
+
+        <div class="rules-container">
+            <div class="item">
+                <button class="question">General Conduct</button>
+                <div class="answer">
+                    <p>Maintain respect at all times. Misconduct or harassment is strictly prohibited.</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <button class="question">Attendance Policy</button>
+                <div class="answer">
+                    <p>Minimum 75% attendance is required to remain eligible.</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <button class="question">Dress Code</button>
+                <div class="answer">
+                    <p>Wear appropriate and professional attire during all official activities.</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <button class="question">Mobile Usage</button>
+                <div class="answer">
+                    <p>Mobile phones must be silent in restricted areas unless permitted.</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <button class="question">Disciplinary Action</button>
+                <div class="answer">
+                    <p>Violations may lead to warnings, suspension, or termination.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h3>Our School</h3>
+        <p>© 2026 All Rights Reserved | Education is Power</p>
+
+        <div class="social">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-youtube"></i>
+        </div>
+    </footer>
+
+    <script>
+        const items = document.querySelectorAll(".item");
+
+        items.forEach(item => {
+            const btn = item.querySelector(".question");
+
+            btn.addEventListener("click", () => {
+                // close others
+                items.forEach(el => {
+                    if (el !== item) {
+                        el.classList.remove("active");
+                        el.querySelector(".answer").style.maxHeight = null;
+                    }
+                });
+
+                // toggle current
+                const answer = item.querySelector(".answer");
+                item.classList.toggle("active");
+
+                if (item.classList.contains("active")) {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                } else {
+                    answer.style.maxHeight = null;
+                }
+            });
+        });
+    </script>
+    <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IT Project - School Calendar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            background: white;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navbar placeholder */
+        #navbar {
+            position: relative;
+            z-index: 999;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 140px 20px 50px 20px;
+        }
+
+        h1 {
+            color: #F59E0B;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* CALENDAR STYLING */
+        .calendar {
+            width: 100%;
+            max-width: 400px;
+            background: #1E293B;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(245, 158, 11, 0.1);
+            color: #F59E0B;
+            padding: 20px;
+            border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+        }
+
+        .header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .header button {
+            background: #F59E0B;
+            border: none;
+            color: #1E293B;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header button:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+
+        .days, .dates {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            text-align: center;
+        }
+
+        .days div {
+            color: #94A3B8;
+            padding: 12px 0;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .dates div {
+            padding: 15px 0;
+            color: #CBD5F5;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s;
+            border: 0.5px solid rgba(255,255,255,0.02);
+        }
+
+        .dates div:hover:not(.inactive) {
+            background: rgba(245, 158, 11, 0.2);
+            color: #F59E0B;
+        }
+
+        .today {
+            color: #1E293B !important;
+            background: #F59E0B !important;
+            font-weight: bold;
+            border-radius: 8px;
+        }
+
+        .festival {
+            position: relative;
+            color: #fb7185 !important;
+            font-weight: bold;
+        }
+
+        /* Tiny dot for festivals */
+        .festival::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            background: #fb7185;
+            border-radius: 50%;
+        }
+
+        .inactive {
+            color: #475569;
+        }
+
+        /* FESTIVAL BOX */
+        .festival-box {
+            width: 100%;
+            max-width: 400px;
+            margin-top: 20px;
+            background: #0F172A;
+            color: #94A3B8;
+            border-radius: 12px;
+            padding: 20px;
+            box-sizing: border-box;
+            border: 1px solid rgba(245, 158, 11, 0.1);
+        }
+
+        .festival-box h3 {
+            color: #F59E0B;
+            margin: 0 0 15px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .festival-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .festival-box li {
+            font-size: 14px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .festival-box li:last-child {
+            border: none;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #070f24;
+            text-align: center;
+            padding: 40px 15px;
+            margin-top: auto;
+            width: 100%;
+            box-sizing: border-box;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        footer h3 { color: #94A3B8; margin-bottom: 8px; }
+        footer p { color: #94A3B8; font-size: 14px; margin: 0; }
+        .social { margin-top: 15px; }
+        .social i {
+            margin: 0 12px;
+            cursor: pointer;
+            color: #94A3B8;
+            transition: 0.3s;
+            font-size: 20px;
+        }
+        .social i:hover { color: #F59E0B; transform: scale(1.2); }
+    </style>
+</head>
+
+<body>
+
+<div id="navbar"></div>
+
+<div class="main-content">
+    <h1>Academic Calendar</h1>
+
+    <div class="calendar">
+        <div class="header">
+            <button onclick="prevMonth()"><i class="fa-solid fa-chevron-left"></i></button>
+            <h3 id="monthYear"></h3>
+            <button onclick="nextMonth()"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+
+        <div class="days">
+            <div>Sun</div><div>Mon</div><div>Tue</div>
+            <div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+        </div>
+
+        <div class="dates" id="dates"></div>
+    </div>
+
+    <div class="festival-box">
+        <h3><i class="fa-solid fa-calendar-star"></i> Monthly Events</h3>
+        <ul id="festivalList"></ul>
+    </div>
+</div>
+
+<footer>
+    <h3>Our School</h3>
+    <p>© 2026 All Rights Reserved | Education is Power</p>
+    <div class="social">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-youtube"></i>
+    </div>
+</footer>
+
+<script>
+    let date = new Date();
+
+    const festivals = [
+        { day: 1, month: 0, name: "New Year Day" },
+        { day: 15, month: 0, name: "Thai Pongal Holiday" },
+        { day: 26, month: 0, name: "Republic Day" },
+        { day: 14, month: 3, name: "Tamil New Year" },
+        { day: 1, month: 4, name: "May Day" },
+        { day: 15, month: 7, name: "Independence Day" },
+        { day: 5, month: 8, name: "Teacher's Day" },
+        { day: 2, month: 9, name: "Gandhi Jayanti" },
+        { day: 12, month: 10, name: "Diwali Celebration" },
+        { day: 25, month: 11, name: "Christmas Break" }
+    ];
+
+    function renderFestivalList(month) {
+        const list = document.getElementById("festivalList");
+        list.innerHTML = "";
+        const monthFestivals = festivals.filter(f => f.month === month);
+
+        if (monthFestivals.length === 0) {
+            list.innerHTML = "<li style='opacity:0.5'>No specific events scheduled.</li>";
+            return;
+        }
+
+        monthFestivals.forEach(f => {
+            list.innerHTML += `<li><span>${f.name}</span> <b style="color:#F59E0B">${f.day}</b></li>`;
+        });
+    }
+
+    function showInfo(name, day, month, year) {
+        if (name) {
+            alert(`✨ Event: ${name}\n📅 Date: ${day}/${month}/${year}`);
+        }
+    }
+
+    function renderCalendar() {
+        const monthYear = document.getElementById("monthYear");
+        const datesContainer = document.getElementById("dates");
+
+        const year = date.getFullYear();
+        const month = date.getMonth();
+
+        const firstDay = new Date(year, month, 1).getDay();
+        const lastDate = new Date(year, month + 1, 0).getDate();
+        const prevLastDate = new Date(year, month, 0).getDate();
+
+        const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+        monthYear.innerText = `${months[month]} ${year}`;
+        datesContainer.innerHTML = "";
+
+        renderFestivalList(month);
+
+        // Previous month filler
+        for (let x = firstDay; x > 0; x--) {
+            datesContainer.innerHTML += `<div class="inactive">${prevLastDate - x + 1}</div>`;
+        }
+
+        // Current month dates
+        for (let i = 1; i <= lastDate; i++) {
+            let todayClass = "";
+            let festivalClass = "";
+            let festivalName = "";
+
+            let realToday = new Date();
+            if (i === realToday.getDate() && month === realToday.getMonth() && year === realToday.getFullYear()) {
+                todayClass = "today";
+            }
+
+            const match = festivals.find(f => f.day === i && f.month === month);
+            if (match) {
+                festivalClass = "festival";
+                festivalName = match.name;
+            }
+
+            datesContainer.innerHTML += `
+                <div class="${todayClass} ${festivalClass}" onclick="showInfo('${festivalName}', ${i}, ${month + 1}, ${year})">
+                    ${i}
+                </div>`;
+        }
+
+        // Next month filler
+        const totalCells = firstDay + lastDate;
+        const nextDays = (7 - (totalCells % 7)) % 7;
+        for (let j = 1; j <= nextDays; j++) {
+            datesContainer.innerHTML += `<div class="inactive">${j}</div>`;
+        }
+    }
+
+    function prevMonth() { date.setMonth(date.getMonth() - 1); renderCalendar(); }
+    function nextMonth() { date.setMonth(date.getMonth() + 1); renderCalendar(); }
+
+    renderCalendar();
+</script>
+<script src="../script.js"></script> </body>
+</html>

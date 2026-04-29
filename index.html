@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chitti School - Premium Education</title>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="premium-top-bar"></div>
+
+    <div id="navbar"></div>
+
+    <section class="hero-slider">
+        <div class="slider-container">
+            <div class="slide active">
+                <div class="hero-overlay"></div>
+                <img src="Assets/campus.jpg" alt="Campus">
+                <div class="hero-content">
+                    <h1>Empowering Future Leaders</h1>
+                    <p>Premium education with modern facilities.</p>
+                    <a href="#" class="hero-btn">Explore More</a>
+                </div>
+            </div>
+            
+            <div class="slide">
+                <div class="hero-overlay"></div>
+                <img src="Assets/library.jpg" alt="Library">
+                <div class="hero-content">
+                    <h1>Excellence in Academics</h1>
+                    <p>World-class faculty and facilities.</p>
+                    <a href="#" class="hero-btn">Our Courses</a>
+                </div>
+            </div>
+        </div>
+        <button class="prev" id="prevBtn">&#10094;</button>
+        <button class="next" id="nextBtn">&#10095;</button>
+    </section>
+
+    <section class="principal-section">
+        <div class="container">
+            <div class="principal-flex">
+                <div class="principal-image-container">
+                    <img src="Assets/principalsir.jpg" alt="Dr. Krishnamurthy" class="principal-img" loading="lazy">
+                    <div class="quote-card">
+                        <span class="quote-icon">“</span>
+                        <p>"Education is the most powerful weapon which you can use to change the world."</p>
+                    </div>
+                </div>
+
+                <div class="principal-content">
+                    <span class="sub-title">MESSAGE FROM THE PRINCIPAL</span>
+                    <h2 class="main-title">A Word from Our Principal</h2>
+                    <div class="title-underline"></div>
+                    
+                    <div class="message-text">
+                        <p>Dear Students, Parents, and Friends of Chitti Future School,</p>
+                        <p>It is with great pride and joy that I welcome you to our prestigious institution. For over two decades, Chitti Future School has been a beacon of academic excellence, moral integrity, and holistic development.</p>
+                        <p>Our mission is simple yet profound — to nurture every child's unique potential, foster critical thinking, and build the leaders of tomorrow.</p>
+                    </div>
+
+                    <div class="principal-info">
+                        <h3>Dr. Krishnamurthy</h3>
+                        <p>M.Ed., Ph.D. | Principal & Director</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="facility-section">
+        <h2 class="title" data-aos="fade-up">Facilities</h2>
+        <div class="cards">
+            <div class="card" data-aos="flip-left" data-aos-duration="1200">
+                <img src="https://images.unsplash.com/photo-1588072432836-e10032774350" loading="lazy" alt="Smart Classes">
+                <div class="card-content">
+                    <h3>Smart Classes</h3>
+                    <p>Interactive digital classrooms with modern learning tools.</p>
+                </div>
+            </div>
+            <div class="card" data-aos="flip-left" data-aos-delay="200" data-aos-duration="1200">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644" loading="lazy" alt="Library">
+                <div class="card-content">
+                    <h3>Library</h3>
+                    <p>Rich knowledge resources with a vast collection of books.</p>
+                </div>
+            </div>
+            <div class="card" data-aos="flip-left" data-aos-delay="400" data-aos-duration="1200">
+                <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018" loading="lazy" alt="Sports">
+                <div class="card-content">
+                    <h3>Sports</h3>
+                    <p>Excellent physical training facilities and huge playgrounds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="academics">
+        <div class="container">
+            <h2 class="section-title text-center">Academic Highlights</h2>
+            <div class="academic-grid">
+                <div class="academic-card">
+                    <div class="icon">📘</div>
+                    <h3>Smart Classrooms</h3>
+                    <p>Interactive digital boards and modern teaching methods.</p>
+                </div>
+                <div class="academic-card">
+                    <div class="icon">👩‍🏫</div>
+                    <h3>Experienced Faculty</h3>
+                    <p>Highly qualified teachers guiding students towards excellence.</p>
+                </div>
+                <div class="academic-card">
+                    <div class="icon">💻</div>
+                    <h3>Digital Learning</h3>
+                    <p>Technology-enabled education with smart tools.</p>
+                </div>
+                <div class="academic-card">
+                    <div class="icon">⚽</div>
+                    <h3>Sports & Activities</h3>
+                    <p>Balanced development through arts and extracurriculars.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="achievements-section">
+        <div class="container achievements-grid">
+            <div class="achievement">
+                <h2 class="counter" data-target="1500">0</h2>
+                <p>Students</p>
+            </div>
+            <div class="achievement">
+                <h2 class="counter" data-target="150">0</h2>
+                <p>Teachers</p>
+            </div>
+            <div class="achievement">
+                <h2 class="counter" data-target="25">0</h2>
+                <p>Awards</p>
+            </div>
+            <div class="achievement">
+                <h2 class="counter" data-target="20">0</h2>
+                <p>Years of Excellence</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="testimonial-header">
+                <span class="trust-badge">TRUSTED BY 1000+ PARENTS</span>
+                <h2>Real Stories, Real <span>Success</span></h2>
+                <div class="heading-line"></div>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="quote-mark">“</div>
+                    <p>"This school has transformed my child's future. Excellent teaching and care! The attention to detail is amazing."</p>
+                    <div class="parent-profile">
+                        <img src="https://i.pravatar.cc/100?img=1" loading="lazy" alt="Parent">
+                        <div class="info">
+                            <h4>Mrs. Priya</h4>
+                            <p>Parent of Grade 5</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-mark">“</div>
+                    <p>"Very supportive staff and modern facilities. Highly recommended for parents who want holistic growth."</p>
+                    <div class="parent-profile">
+                        <img src="https://i.pravatar.cc/100?img=2" loading="lazy" alt="Parent">
+                        <div class="info">
+                            <h4>Mr. Karthik</h4>
+                            <p>Parent of Grade 8</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-mark">“</div>
+                    <p>"The curriculum is very innovative. My son loves the robotics lab and the smart classroom experience."</p>
+                    <div class="parent-profile">
+                        <img src="https://i.pravatar.cc/100?img=3" loading="lazy" alt="Parent">
+                        <div class="info">
+                            <h4>Mrs. Anitha</h4>
+                            <p>Parent of Grade 3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Admissions Open 2026-27</h2>
+            <p>Enroll your child in a future-ready learning environment today.</p>
+            <a href="#" class="cta-btn">Apply Now</a>
+        </div>
+    </section>
+
+    <footer class="premium-footer">
+        <div class="footer-top">
+            <div class="container footer-grid">
+                <div class="footer-column about-school">
+                    <div class="footer-logo">
+                        <i class="fa-solid fa-graduation-cap logo-icon"></i>
+                        <h2>CHITTI <span>SCHOOL</span></h2>
+                    </div>
+                    <p>Nurturing young minds with values, innovation, and excellence since 2000. Empowering the leaders of tomorrow.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Admissions</a></li>
+                        <li><a href="#">Academics</a></li>
+                        <li><a href="#">Facilities</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column contact-details">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123, School Street, Salem,<br>Tamil Nadu - 636001</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <p>+91 98765 43210</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>info@chittischool.com</p>
+                    </div>
+                </div>
+
+                <div class="footer-column newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get the latest updates and news.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Your Email Address" required>
+                        <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-flex">
+                <p>&copy; 2026 Chitti International School. All Rights Reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: false,
+        mirror: true,
+        offset: 200
+      });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
