@@ -18,7 +18,7 @@
 body{
     font-family:'Poppins', sans-serif; /* Ithu mattum add pannunga */
     background: linear-gradient(135deg,var(--bg1),var(--bg2));
-    color:#001529; 
+    color:#F1F5F9; 
     overflow-x:hidden;
 }
 .section{
@@ -30,7 +30,7 @@ body{
   font-size:34px;
   font-weight:600;
   margin-bottom:50px;
-  color:#333;
+  color:#1E293B;
 }
 
 .list{
@@ -65,44 +65,50 @@ body{
   flex:1;
 }
 
-.tag{
+.btn{
   display:inline-block;
   padding:4px 10px;
   border-radius:15px;
   font-size:12px;
-  color:#333;
+  color:#1E293B;
   margin-bottom:6px;
-  background: #fff;
+  background: #F59E0B;
 }
+.btn:hover{
+  background: #F1F5F9;
+  transform: scale(1.05);
+  
+}
+
 .content h3{
   font-size:18px;
   margin-bottom:5px;
-  color:#e2a90c;
+  color:#F1F5F9;
 }
 
 .content p{
   font-size:14px;
-  color:#94a3b8;
+  color:#CBD5F5;
 }
 
 footer{
-    background:#070f24;
+    background:#1E293B;
     text-align:center;
     padding:30px 15px;
     margin-top:40px;
     border-top:1px solid rgba(255,255,255,0.1);
 }
 
-footer h3{
+footer h1{
     color:var(--accent);
     margin-bottom:8px;
-    color: #94a3b8;
+    color: #F59E0B;
 }
 
 footer p{
     color:var(--muted);
     font-size:14px;
-    color: #94a3b8;
+    color: #CBD5F5;
 }
 
 .social{
@@ -112,7 +118,7 @@ footer p{
 .social i{
     margin:0 10px;
     cursor:pointer;
-    color:white;
+    color:#F1F5F9;
     transition:0.3s;
 }
 
@@ -132,7 +138,7 @@ footer p{
     <div class="item">
       <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b">
       <div class="content">
-        <span class="tag c1">Age Criteria</span>
+        <span class="btn">Age Criteria</span>
         <h3>Minimum Age Requirement</h3>
         <p>Students must meet the required age criteria for the respective grade.</p>
       </div>
@@ -141,7 +147,7 @@ footer p{
     <div class="item">
       <img src="https://images.unsplash.com/photo-1588072432904-843af37f03ed">
       <div class="content">
-        <span class="tag c2">Academic</span>
+        <span class="btn">Academic</span>
         <h3>Previous Records</h3>
         <p>Report cards or previous academic records must be submitted.</p>
       </div>
@@ -150,7 +156,7 @@ footer p{
     <div class="item">
       <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7">
       <div class="content">
-        <span class="tag c3">Assessment</span>
+        <span class="btn">Assessment</span>
         <h3>Entrance Test</h3>
         <p>Students may attend a test or interaction based on grade level.</p>
       </div>
@@ -159,7 +165,7 @@ footer p{
     <div class="item">
       <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e">
       <div class="content">
-        <span class="tag c4">Documents</span>
+        <span class="btn">Documents</span>
         <h3>Required Docs</h3>
         <p>Birth certificate, TC, ID proof, and photos are required.</p>
       </div>
@@ -168,7 +174,7 @@ footer p{
     <div class="item">
       <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644">
       <div class="content">
-        <span class="tag c5">Health</span>
+        <span class="btn">Health</span>
         <h3>Medical Fitness</h3>
         <p>Basic health certificate may be required for admission.</p>
       </div>
@@ -178,7 +184,7 @@ footer p{
 
 <!-- FOOTER -->
 <footer>
-    <h3>Our School</h3>
+    <h1>Our School</h1>
     <p>© 2026 All Rights Reserved | Education is Power</p>
 
     <div class="social">
