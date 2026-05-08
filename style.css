@@ -1063,12 +1063,13 @@ body {
         width: 100%;
         margin-top: 15px;
         padding-bottom: 20px;
-        text-align: center; 
+       
     }
     
     .mobile-only-contact .contact-btn {
         display: inline-block; 
         width: auto; 
+         text-align: center; 
         padding: 10px 30px; 
     }
     .hero-content h1 { font-size: 2.5rem; }
