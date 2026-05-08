@@ -232,6 +232,7 @@ body {
 }
 .mobile-only-contact {
     display: none; 
+    font-size: 13px;
 }
 .contact-btn {
     background: var(--primary-color);
@@ -1057,17 +1058,18 @@ body {
         padding-left: 20px;
         background: transparent;
     }
-    .mobile-only-contact {
+   .mobile-only-contact {
         display: block;
         width: 100%;
         margin-top: 15px;
-        padding-bottom: 10px;
+        padding-bottom: 20px;
+        text-align: center; 
     }
     
     .mobile-only-contact .contact-btn {
-        display: inline-block;
-        text-align: center;
-        width: max-content;
+        display: inline-block; 
+        width: auto; 
+        padding: 10px 30px; 
     }
     .hero-content h1 { font-size: 2.5rem; }
     .footer-grid { grid-template-columns: 1fr; gap: 40px; }
