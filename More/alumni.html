@@ -1,9 +1,9 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<!-- Mobile Responsive-ku indha viewport tag romba mukkiyam -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.0/css/all.min.css">
 <title>School Alumni Directory</title>
@@ -14,121 +14,212 @@
     padding:0;
     box-sizing:border-box;
     font-family:'Poppins', sans-serif;
-}
+  }
 
-body{
+  body{
     background: linear-gradient(135deg,var(--bg1),var(--bg2));
+    /* Fallback background in case CSS variables are missing */
+    background-color: #f4f7f6; 
     color:#001529;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-}
-
+  }
 
   h1 {
-    padding: 140px 20px 20px;
+    padding: 100px 20px 20px;
     text-align: center;
     color: #F59E0B;
   }
 
   .alumini-container {
     max-width: 1000px;
+    width: 100%;
     margin: auto;
+    padding: 0 15px; /* Added padding for smaller screens */
   }
 
   .form-box {
-    background:black;
-    padding: 15px;
+    background: black;
+    padding: 20px;
     border-radius: 8px;
     margin-bottom: 15px;
     text-align: center;
     box-shadow: 0 3px 8px rgba(245,158,11,0.08);
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    justify-content: center;
+    gap: 10px;
   }
 
   input {
-    padding: 8px;
-    margin: 5px;
+    padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
+    outline: none;
   }
 
   button {
-    padding: 8px 12px;
+    padding: 10px 15px;
     background: #1E293B;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
   }
 
   button:hover {
     background: #CBD5F5;
+    color: #1E293B;
   }
 
   .delete-btn {
     background:#F59E0B;
+    color: white;
   }
 
+  .delete-btn:hover {
+    background: #d97706;
+    color: white;
+  }
+
+  .search-box {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .search-box input {
+    width: 60%;
+    padding: 10px;
+  }
+
+  /* Table Styles */
   table {
     width: 100%;
     border-collapse: collapse;
     background: white;
     box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
   }
 
   th, td {
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ddd;
     text-align: center;
   }
 
   th {
-   background-color:#F59E0B;
+    background-color:#F59E0B;
     color:white;
   }
 
-  .search-box {
-    text-align: center;
-    margin-bottom: 10px;
-  }
-
- footer{
+  footer{
     background:#070f24;
     text-align:center;
     padding:30px 15px;
-    margin-top:150px;
-    border-top:1px solid rgba(255,255,255,0.1);
-    margin-top: auto; /* Ithu footer-a force panni keela thallidum */
+    margin-top: auto; 
     width: 100%;
     box-sizing: border-box;
-}
+  }
 
-footer h3{
+  footer h3{
     color:#CBD5F5;
     margin-bottom:8px;
-}
+  }
 
-footer p{
+  footer p{
     color:#CBD5F5;
     font-size:14px;
-}
+  }
 
-.social{
+  .social{
     margin-top:12px;
     color:#CBD5F5;
-}
+  }
 
-.social i{
+  .social i{
     margin:0 10px;
     cursor:pointer;
     color:#CBD5F5;
     transition:0.3s;
-}
+    font-size: 1.2rem;
+  }
 
-.social i:hover{
-    color:#CBD5F5;
-    transform:scale(1.3);
-}
+  .social i:hover{
+    color:#F59E0B;
+    transform:scale(1.2);
+  }
+
+  /* =========================================
+     MOBILE RESPONSIVE CSS
+     ========================================= */
+  @media screen and (max-width: 768px) {
+    h1 {
+      padding-top: 60px;
+      font-size: 1.5rem;
+    }
+
+    /* Stack form inputs */
+    .form-box {
+      flex-direction: column;
+    }
+
+    .form-box input, .form-box button {
+      width: 100%;
+    }
+
+    .search-box input {
+      width: 100% !important;
+    }
+
+    /* Convert Table to Cards */
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+
+    thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+
+    tr {
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    td {
+      border: none;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      padding-left: 50%;
+      text-align: left;
+    }
+
+    td:last-child {
+      border-bottom: none;
+      text-align: center;
+      padding-left: 12px; /* Center the delete button */
+    }
+
+    /* Add labels before data using CSS */
+    td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 12px;
+      width: 45%;
+      padding-right: 10px;
+      white-space: nowrap;
+      font-weight: bold;
+      color: #F59E0B;
+      text-align: left;
+    }
+  }
 </style>
 </head>
 
@@ -144,12 +235,12 @@ footer p{
     <input type="text" id="class" placeholder="Class (10th/12th)">
     <input type="text" id="profession" placeholder="Current Profession">
     <input type="text" id="contact" placeholder="Contact">
-    <button onclick="addAlumni()">Add</button>
+    <button onclick="addAlumni()">Add Alumni</button>
   </div>
 
   <!-- Search -->
   <div class="search-box">
-    <input type="text" id="search" placeholder="Search by name..." onkeyup="searchAlumni()" style="width:60%;">
+    <input type="text" id="search" placeholder="Search by name..." onkeyup="searchAlumni()">
   </div>
 
   <!-- Table -->
@@ -168,12 +259,10 @@ footer p{
   </table>
 </div>
 
-
 <!-- FOOTER -->
 <footer>
     <h3>Our School</h3>
     <p>© 2026 All Rights Reserved | Education is Power</p>
-
     <div class="social">
         <i class="fa-brands fa-facebook"></i>
         <i class="fa-brands fa-instagram"></i>
@@ -222,14 +311,15 @@ function displayAlumni(data) {
   table.innerHTML = "";
 
   data.forEach(a => {
+    // Note: 'data-label' attribute is added here for mobile card view titles
     table.innerHTML += `
       <tr>
-        <td>${a.name}</td>
-        <td>${a.batch}</td>
-        <td>${a.studentClass}</td>
-        <td>${a.profession}</td>
-        <td>${a.contact}</td>
-        <td>
+        <td data-label="Name">${a.name}</td>
+        <td data-label="Batch">${a.batch}</td>
+        <td data-label="Class">${a.studentClass}</td>
+        <td data-label="Profession">${a.profession}</td>
+        <td data-label="Contact">${a.contact}</td>
+        <td data-label="Action">
           <button class="delete-btn" onclick="deleteAlumni(${a.id})">Delete</button>
         </td>
       </tr>
